@@ -1,4 +1,4 @@
-package com.JeffDziad.classes;
+package com.JeffDziad.classes.models;
 
 public class Sale {
 
