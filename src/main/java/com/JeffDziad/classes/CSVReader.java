@@ -29,6 +29,7 @@ public class CSVReader implements IDBReader {
         List<Sale> out = new ArrayList<>();
         while(scanner.hasNext()) {
             String[] parsed = getParsedCSV(scanner.nextLine());
+
         }
         return out;
     }
