@@ -29,8 +29,8 @@ public class AppConfig {
 
     @Bean
     public IReportDisplayer getReportGenerator() {
-        return new SalesReportByLocation();
-        //return new SalesReportDetailed();
+        //return new SalesReportByLocation();
+        return new SalesReportDetailed();
     }
 
 }
