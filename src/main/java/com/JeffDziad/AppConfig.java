@@ -1,6 +1,8 @@
 package com.JeffDziad;
 
+import com.JeffDziad.classes.policies.FlatRateDomesticShippingPolicy;
 import com.JeffDziad.classes.policies.FreeShippingOverXPolicy;
+import com.JeffDziad.classes.policies.FreeShippingPolicy;
 import com.JeffDziad.classes.readers.SalesCSVReader;
 import com.JeffDziad.classes.reports.SalesReportByLocation;
 import com.JeffDziad.classes.reports.SalesReportDetailed;
@@ -20,8 +22,8 @@ public class AppConfig {
 
     @Bean
     public IShippingPolicy getShippingPolicy() {
-        // return new FreeShippingPolicy();
-        // return new FlatRateDomesticShippingPolicy(10, 15, "United States");
+        //return new FreeShippingPolicy();
+        //return new FlatRateDomesticShippingPolicy(10, 15, "United States");
         return new FreeShippingOverXPolicy(100, 15);
     }
 

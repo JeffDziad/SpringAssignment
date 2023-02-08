@@ -18,7 +18,7 @@ public class FlatRateDomesticShippingPolicy implements IShippingPolicy {
 
     @Override
     public String getTitle() {
-        return String.format("Flat Rate (%f) Domestic Shipping");
+        return String.format("Flat Rate ($%.2f) Domestic Shipping", domesticRate);
     }
 
     @Override
