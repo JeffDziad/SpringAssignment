@@ -1,5 +1,8 @@
 package com.JeffDziad.interfaces;
 
-public interface IShippingPolicy {
+import com.JeffDziad.classes.models.Sale;
 
+public interface IShippingPolicy {
+    String getTitle();
+    void applyShippingPolicy(Sale sale);
 }

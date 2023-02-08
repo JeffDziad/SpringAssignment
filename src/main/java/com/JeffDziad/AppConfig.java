@@ -1,40 +1,34 @@
 package com.JeffDziad;
 
-import com.JeffDziad.classes.io.GUIInput;
-import com.JeffDziad.classes.io.GUIOutput;
-import com.JeffDziad.classes.readers.CSVReader;
-import com.JeffDziad.classes.policies.FreeShippingPolicy;
-import com.JeffDziad.interfaces.IDBReader;
-import com.JeffDziad.interfaces.IInput;
-import com.JeffDziad.interfaces.IOutput;
-import com.JeffDziad.interfaces.IShippingPolicy;
+import com.JeffDziad.classes.policies.FreeShippingOverXPolicy;
+import com.JeffDziad.classes.readers.SalesCSVReader;
+import com.JeffDziad.classes.reports.SalesReportByLocation;
+import com.JeffDziad.classes.reports.SalesReportDetailed;
+import com.JeffDziad.interfaces.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.JeffDziad.classes")
+@ComponentScan("com.JeffDziad")
 public class AppConfig {
 
-//    @Bean
-//    public IShippingPolicy getShippingPolicy() {
-//        return new FreeShippingPolicy();
-//    }
-//
     @Bean
-    public IDBReader getDBReader() {
-        return new CSVReader("../data.txt", 4);
+    public ISalesReader getSalesReader() {
+        return new SalesCSVReader("src/main/java/com/JeffDziad/sales.txt");
     }
 
     @Bean
-    public IInput getIInput() {
-        return new GUIInput();
+    public IShippingPolicy getShippingPolicy() {
+        // return new FreeShippingPolicy();
+        // return new FlatRateDomesticShippingPolicy(10, 15, "United States");
+        return new FreeShippingOverXPolicy(100, 15);
     }
 
     @Bean
-    public IOutput getIOutput() {
-        return new GUIOutput();
+    public IReportDisplayer getReportGenerator() {
+        //return new SalesReportByLocation();
+        return new SalesReportDetailed();
     }
-
 
 }

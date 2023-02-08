@@ -4,6 +4,6 @@ import com.JeffDziad.classes.models.Sale;
 
 import java.util.List;
 
-public interface IDBReader {
-    List<Sale> getData();
+public interface IReportDisplayer {
+    void displaySalesReport(String title, List<Sale> salesList);
 }

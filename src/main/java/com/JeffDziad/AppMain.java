@@ -7,7 +7,5 @@ public class AppMain {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
         context.refresh();
-
-        //context.getBean(OrderReporter.class)
     }
 }
