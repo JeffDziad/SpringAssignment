@@ -31,7 +31,7 @@ public class SalesReportByLocation implements IReportDisplayer {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.add(sp);
-        frame.setSize(500, 200);
+        frame.setSize(1000, 400);
         frame.setVisible(true);
 
     }
