@@ -15,7 +15,7 @@ public class FreeShippingOverXPolicy implements IShippingPolicy {
 
     @Override
     public String getTitle() {
-        return "Free Shipping Over " + Float.toString(xAmount);
+        return "Free Shipping Over $" + Float.toString(xAmount);
     }
 
     @Override
