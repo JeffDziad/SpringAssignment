@@ -27,6 +27,9 @@ public class ReportingTool {
         for(Sale s: sales) {
             policy.applyShippingPolicy(s);
         }
+        System.out.println("\n+-------------------------------+");
+        System.out.println("| Generating Report...          |");
+        System.out.println("+-------------------------------+\n");
         reporter.displaySalesReport(policy.getTitle(), sales);
     }
 

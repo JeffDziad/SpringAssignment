@@ -4,6 +4,7 @@ import com.JeffDziad.classes.policies.FlatRateDomesticShippingPolicy;
 import com.JeffDziad.classes.policies.FreeShippingOverXPolicy;
 import com.JeffDziad.classes.policies.FreeShippingPolicy;
 import com.JeffDziad.classes.readers.SalesCSVReader;
+import com.JeffDziad.classes.readers.SalesConsoleReader;
 import com.JeffDziad.classes.reports.SalesReportByLocation;
 import com.JeffDziad.classes.reports.SalesReportDetailed;
 import com.JeffDziad.interfaces.*;
@@ -17,7 +18,8 @@ public class AppConfig {
 
     @Bean
     public ISalesReader getSalesReader() {
-        return new SalesCSVReader("src/main/java/com/JeffDziad/sales.txt");
+        return new SalesConsoleReader();
+        //return new SalesCSVReader("src/main/java/com/JeffDziad/sales.txt");
     }
 
     @Bean
