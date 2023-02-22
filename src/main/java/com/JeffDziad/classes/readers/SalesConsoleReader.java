@@ -26,6 +26,15 @@ public class SalesConsoleReader implements ISalesReader {
             System.out.print("\tEnter a " + str + ": ");
             out = scanner.nextLine();
 
+            if(isFloat) {
+                try {
+                    float test = Float.parseFloat(out);
+                } catch (NumberFormatException nfe) {
+                    System.out.println("\nPlease enter a numeric value for " + str + ". Try again...\n");
+                    continue;
+                }
+            }
+
             if(out.length() > 0) {
                 valid = true;
             } else {
@@ -33,13 +42,7 @@ public class SalesConsoleReader implements ISalesReader {
                 continue;
             }
 
-            if(isFloat) {
-                try {
-                    float test = Float.parseFloat(out);
-                } catch (NumberFormatException nfe) {
-                    System.out.println("\nPlease enter a numeric value for " + str + ". Try again...\n");
-                }
-            }
+
 
         }
         return out;
